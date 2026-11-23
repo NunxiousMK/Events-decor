@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Events Décor creates elegant celebrations and unforgettable event experiences.">
+  <title>Events Décor | Beautiful Moments, Thoughtfully Made</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero" id="home">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Events Décor home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-petal petal-left"></span>
+          <span class="brand-petal petal-right"></span>
+          <span class="brand-flame"></span>
+        </span>
+        <span class="brand-name">Events <strong>Décor</strong></span>
+      </a>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a class="active" href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="#contact">Plan an Event <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <div class="hero-content">
+      <p class="eyebrow"><span></span> Creating moments that last forever</p>
+      <h1>Beautiful Events,<br><em>Perfectly Curated.</em></h1>
+      <p class="hero-copy">From intimate gatherings to grand celebrations, we bring your vision to life with elegant décor and effortless planning.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#services">Explore Services <span aria-hidden="true">→</span></a>
+        <a class="button button-ghost" href="#gallery"><span class="play" aria-hidden="true">▶</span> View Our Work</a>
+      </div>
+    </div>
+
+    <aside class="availability" aria-label="Business availability">
+      <span class="availability-icon" aria-hidden="true">◷</span>
+      <span><small>Available</small><strong>24/7 Service</strong></span>
+    </aside>
+  </header>
+
+  <main>
+    <section class="intro" id="services">
+      <p class="section-kicker">What we create</p>
+      <h2>Every detail,<br><em>beautifully considered.</em></h2>
+      <div class="service-grid">
+        <article>
+          <span class="service-number">01</span>
+          <h3>Wedding Décor</h3>
+          <p>Romantic, refined settings designed around your story.</p>
+        </article>
+        <article>
+          <span class="service-number">02</span>
+          <h3>Private Celebrations</h3>
+          <p>Birthdays, anniversaries and milestone moments made memorable.</p>
+        </article>
+        <article>
+          <span class="service-number">03</span>
+          <h3>Corporate Events</h3>
+          <p>Polished environments that elevate every occasion.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery-strip" id="gallery" aria-label="Event gallery">
+      <div class="gallery-card card-one"><span>Elegant Weddings</span></div>
+      <div class="gallery-card card-two"><span>Luxury Tablescapes</span></div>
+      <div class="gallery-card card-three"><span>Grand Celebrations</span></div>
+    </section>
+
+    <section class="about" id="about">
+      <p class="section-kicker">Our approach</p>
+      <h2>Make room for<br><em>unforgettable.</em></h2>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="section-kicker">Start your celebration</p>
+        <h2>Let’s create something beautiful.</h2>
+        <div class="contact-details">
+          <a href="tel:+254710467828">0710 467 828</a>
+          <a href="mailto:nyaangameshack83@gmail.com">nyaangameshack83@gmail.com</a>
+        </div>
+      </div>
+      <a class="button button-primary" href="mailto:nyaangameshack83@gmail.com">Book a Consultation <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menuButton.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
